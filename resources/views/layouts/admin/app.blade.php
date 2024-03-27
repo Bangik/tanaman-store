@@ -46,5 +46,8 @@
   
   <!-- Template JS File -->
   <script src="{{asset('js/scripts.js')}}"></script>
+
+  <!-- Page Specific JS File -->
+  @stack('libraries-script')
 </body>
 </html>
