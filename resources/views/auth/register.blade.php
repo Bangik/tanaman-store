@@ -11,7 +11,7 @@
             <div class="card-header"><h4>Register</h4></div>
 
             <div class="card-body">
-            <form method="POST">
+            <form method="POST" action="{{ route('register') }}" class="needs-validation" novalidate="">
                 @csrf
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -94,6 +94,10 @@
     </div>
 </div>
 @endsection
+
+@push('libraries-styles')
+<link rel="stylesheet" href="{{asset('css/selectric.css')}}">
+@endpush
 
 @push('libraries-scripts')
 <script src="{{asset('js/jquery.pwstrength.min.js')}}"></script>

@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('css/fontawesome.all.min.css')}}">
 
+  <!-- CSS Libraries -->
+  @stack('libraries-styles')
+
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{asset('css/style.css')}}">
   <link rel="stylesheet" href="{{asset('css/components.css')}}">
