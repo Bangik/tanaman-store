@@ -16,12 +16,17 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('users', 'App\Http\Controllers\Admin\UserController');
-Route::resource('plants', 'App\Http\Controllers\Admin\PlantController');
-Route::resource('transactions', 'App\Http\Controllers\Admin\TransactionController');
+// route group with middleware auth and admin
+Route::group(['middleware' => ['auth', 'admin']], function () {
+  Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+  Route::resource('users', 'App\Http\Controllers\Admin\UserController');
+  Route::resource('plants', 'App\Http\Controllers\Admin\PlantController');
+  Route::resource('transactions', 'App\Http\Controllers\Admin\TransactionController');
+});
 
 Route::get('/', 'App\Http\Controllers\User\LandingController@index')->name('landing');
+
+Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/cart', 'App\Http\Controllers\User\TransactionController@indexCart')->name('cart');
 Route::get('/cart/add/{id}', 'App\Http\Controllers\User\TransactionController@addToCart')->name('cart.add');
@@ -32,3 +37,5 @@ Route::get('/history-transactions', 'App\Http\Controllers\User\TransactionContro
 Route::get('/transactions/user/{id}', 'App\Http\Controllers\User\TransactionController@show')->name('transactions.user.show');
 Route::post('/transactions/user', 'App\Http\Controllers\User\TransactionController@store')->name('transactions.user.store');
 Route::post('/transactions/user/upload/{id}', 'App\Http\Controllers\User\TransactionController@upload')->name('transactions.user.upload');
+
+});
