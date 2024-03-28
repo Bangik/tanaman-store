@@ -26,7 +26,6 @@ class PlantController extends Controller
             'name' => 'required|max:255',
             'description' => 'required',
             'price' => 'required|numeric',
-            'stock' => 'required|numeric',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -40,7 +39,6 @@ class PlantController extends Controller
             'slug' => Str::slug($request->name),
             'description' => $request->description,
             'price' => $request->price,
-            'stock' => $request->stock,
             'image' => $image_path,
         ]);
 
@@ -64,7 +62,6 @@ class PlantController extends Controller
             'name' => 'required|max:255',
             'description' => 'required',
             'price' => 'required|numeric',
-            'stock' => 'required|numeric',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -88,7 +85,6 @@ class PlantController extends Controller
             'slug' => Str::slug($request->name),
             'description' => $request->description,
             'price' => $request->price,
-            'stock' => $request->stock,
             'image' => $image_path,
         ]);
 

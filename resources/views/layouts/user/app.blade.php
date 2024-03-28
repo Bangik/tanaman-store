@@ -8,6 +8,9 @@
         <meta content="" name="keywords">
         <meta content="" name="description">
 
+        <!-- csrf token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,6 +69,7 @@
 
     <!-- Template Javascript -->
     <script src="{{asset('userasset/js/main.js')}}"></script>
+    @stack('scripts')
     </body>
 
 </html>

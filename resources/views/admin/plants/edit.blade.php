@@ -51,15 +51,6 @@
               <div class="mt-2 text-danger">{{ $message }}</div>
               @enderror
             </div>
-            
-            <div class="form-group">
-              <label for="stock">Stok</label> <small class="text-danger">*</small>
-              <input type="text" id="stock" name="stock" class="form-control @error('stock') is-invalid @enderror" value="{{$plant->stock}}">
-
-              @error('stock')
-              <div class="mt-2 text-danger">{{ $message }}</div>
-              @enderror
-            </div>
 
             <div class="form-group">
               <label for="image">Gambar</label>

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('slug');
             $table->text('description');
             $table->string('price');
-            $table->string('stock');
             $table->string('image');
             $table->timestamps();
         });

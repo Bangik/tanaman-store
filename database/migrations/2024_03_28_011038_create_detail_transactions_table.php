@@ -17,7 +17,6 @@ return new class extends Migration
             $table->foreignId('plant_id')->constrained()->onDelete('cascade');
             $table->integer('quantity');
             $table->integer('sub_total');
-            $table->string('note')->nullable();
             $table->timestamps();
         });
     }

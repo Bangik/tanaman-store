@@ -35,7 +35,6 @@
                   </th>
                   <th>Nama</th>
                   <th>Harga</th>
-                  <th>Stok</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -45,7 +44,6 @@
                   <td>{{$loop->iteration}}</td>
                   <td>{{$plant->name}}</td>
                   <td>{{$plant->price}}</td>
-                  <td>{{$plant->stock}}</td>
                   <td>
                     <a href="{{route('plants.edit', $plant->id)}}" class="btn btn-warning"><i class="far fa-edit"></i></a>
                     <form action="{{route('plants.destroy', $plant->id)}}" method="POST" class="d-inline">

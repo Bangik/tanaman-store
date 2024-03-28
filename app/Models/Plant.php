@@ -14,7 +14,6 @@ class Plant extends Model
         'slug',
         'description',
         'price',
-        'stock',
         'image',
     ];
 

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,13 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('users', 'App\Http\Controllers\Admin\UserController');
 Route::resource('plants', 'App\Http\Controllers\Admin\PlantController');
 Route::resource('transactions', 'App\Http\Controllers\Admin\TransactionController');
+
+Route::get('/', 'App\Http\Controllers\User\LandingController@index')->name('landing');
+
+Route::get('/cart', 'App\Http\Controllers\User\TransactionController@indexCart')->name('cart');
+Route::get('/cart/add/{id}', 'App\Http\Controllers\User\TransactionController@addToCart')->name('cart.add');
+Route::patch('/cart/{id}', 'App\Http\Controllers\User\TransactionController@update')->name('cart.update');
+Route::delete('/cart/{id}', 'App\Http\Controllers\User\TransactionController@destroy')->name('cart.destroy');
+
+Route::get('/history-transactions', 'App\Http\Controllers\User\TransactionController@index')->name('transactions.user.index');
+Route::get('/transactions/user/{id}', 'App\Http\Controllers\User\TransactionController@show')->name('transactions.user.show');
+Route::post('/transactions/user', 'App\Http\Controllers\User\TransactionController@store')->name('transactions.user.store');
+Route::post('/transactions/user/upload/{id}', 'App\Http\Controllers\User\TransactionController@upload')->name('transactions.user.upload');
