@@ -47,7 +47,6 @@
                   <td>{{$transaction->status}}</td>
                   <td>
                     <a href="{{route('transactions.show', $transaction->id)}}" class="btn btn-info"><i class="far fa-eye"></i></a>
-                    <a href="{{route('transactions.edit', $transaction->id)}}" class="btn btn-warning"><i class="far fa-edit"></i></a>
                     <form action="{{route('transactions.destroy', $transaction->id)}}" method="POST" class="d-inline">
                       @csrf
                       @method('delete')

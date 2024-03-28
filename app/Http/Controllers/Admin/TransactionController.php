@@ -27,18 +27,22 @@ class TransactionController extends Controller
     public function update(Request $request, Transaction $transaction)
     {
         $request->validate([
-            'status' => 'required|in:PENDING,SUCCESS,FAILED',
+            'status' => 'required|in:PENDING,PROCESSING,SUCCESS,FAILED',
         ]);
 
         $transaction->update($request->only('status'));
 
-        return redirect()->route('admin.transactions.index');
+        return redirect()->route('transactions.show', $transaction->id);
     }
 
     public function destroy(Transaction $transaction)
     {
+        if ($transaction->payment_image) {
+            unlink(public_path($transaction->payment_image));
+        }
+
         $transaction->delete();
 
-        return redirect()->route('admin.transactions.index');
+        return redirect()->route('transactions.index');
     }
 }
