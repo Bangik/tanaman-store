@@ -17,6 +17,7 @@
       <li class="menu-header">Master</li>
       <li class="{{ request()->is('users') ? 'active' : '' }}"><a class="nav-link" href="{{route('users.index')}}"><i class="far fa-user"></i> <span>Users</span></a></li>
       <li class="{{ request()->is('plants') ? 'active' : '' }}"><a class="nav-link" href="{{route('plants.index')}}"><i class="fas fa-seedling"></i> <span>Tanaman</span></a></li>
+      <li class="{{ request()->is('transactions') ? 'active' : '' }}"><a class="nav-link" href="{{route('transactions.index')}}"><i class="fas fa-money-bill-wave"></i> <span>Transaksi</span></a></li>
       <li class="dropdown">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
         <ul class="dropdown-menu">

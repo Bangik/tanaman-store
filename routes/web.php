@@ -22,3 +22,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('users', 'App\Http\Controllers\Admin\UserController');
 Route::resource('plants', 'App\Http\Controllers\Admin\PlantController');
+Route::resource('transactions', 'App\Http\Controllers\Admin\TransactionController');
