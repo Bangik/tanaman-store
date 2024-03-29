@@ -10,4 +10,4 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # RUN docker-php-ext-install gettext intl pdo pdo_mysql gd zip
 
-# docker run --name tanaman-store -v $(pwd):/var/www/html -p 9004:80 --network laravel-docker-network -d tanaman-store
+# docker run --name tanaman-store -v $(pwd):/var/www/html -p 9004:80 --network go-hacktiv-mygram_default -d tanaman-store
