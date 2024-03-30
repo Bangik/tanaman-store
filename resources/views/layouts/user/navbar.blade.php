@@ -21,9 +21,9 @@
             <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
                     <a href="{{route('landing')}}" class="nav-item nav-link {{request()->is('/') ? 'active' : ''}}">Home</a>
-                    <a href="shop.html" class="nav-item nav-link">Shop</a>
-                    <a href="{{route('transactions.user.index')}}" class="nav-item nav-link {{request()->is('history-transactions') ? 'active' : ''}}">History Transactions</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="{{route('tanaman')}}" class="nav-item nav-link {{request()->is('tanaman') ? 'active' : ''}}">Belanja Tanaman</a>
+                    <a href="{{route('transactions.user.index')}}" class="nav-item nav-link {{request()->is('history-transactions') ? 'active' : ''}}">Histori Transaksi</a>
+                    <a href="contact.html" class="nav-item nav-link">Tanaman Care</a>
                 </div>
                 <div class="d-flex m-3 me-0">
                     <a href="{{route('cart')}}" class="position-relative me-4 my-auto">

@@ -25,6 +25,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 });
 
 Route::get('/', 'App\Http\Controllers\User\LandingController@index')->name('landing');
+Route::get('/tanaman', 'App\Http\Controllers\User\PlantController@index')->name('tanaman');
 
 Route::group(['middleware' => 'auth'], function () {
   Route::get('/cart', 'App\Http\Controllers\User\TransactionController@indexCart')->name('cart');
