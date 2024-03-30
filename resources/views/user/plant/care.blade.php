@@ -66,11 +66,22 @@
                         @enderror
                     </div>
                     <div class="form-group row mb-3">
-                        <label for="plant" class="col-sm-3 col-form-label">Nomor Telepon</label>
+                        <label for="plant" class="col-sm-3 col-form-label">Jenis Tanaman</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="plant" name="plant" value="{{old('plant')}}">
                         </div>
                         @error('plant')
+                        <div class="col-sm-9 offset-sm-3">
+                            <small class="text-danger">{{ $message }}</small>
+                        </div>
+                        @enderror
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="care" class="col-sm-3 col-form-label">Keluhan</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" id="care" name="care" rows="3">{{old('care')}}</textarea>
+                        </div>
+                        @error('care')
                         <div class="col-sm-9 offset-sm-3">
                             <small class="text-danger">{{ $message }}</small>
                         </div>

@@ -41,8 +41,12 @@
                 <td>{{$plantCare->address}}</td>
               </tr>
               <tr>
-                <th>Tanaman</th>
+                <th>Jenis Tanaman</th>
                 <td>{{$plantCare->plant}}</td>
+              </tr>
+              <tr>
+                <th>Keluhan</th>
+                <td>{{$plantCare->care}}</td>
               </tr>
               <tr>
                 <th>Status</th>

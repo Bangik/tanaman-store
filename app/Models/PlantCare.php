@@ -14,6 +14,7 @@ class PlantCare extends Model
         'phone',
         'address',
         'plant',
+        'care',
         'status',
     ];
 }

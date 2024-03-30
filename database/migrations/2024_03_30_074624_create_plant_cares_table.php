@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('phone');
             $table->string('address');
             $table->string('plant');
+            $table->string('care');
             $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
             $table->timestamps();
         });

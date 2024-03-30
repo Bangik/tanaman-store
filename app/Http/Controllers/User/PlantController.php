@@ -26,7 +26,8 @@ class PlantController extends Controller
             'name' => 'required|string|max:255',
             'phone' => 'required|string|max:15',
             'address' => 'required|string|max:255',
-            'plant' => 'required|string|max:255'
+            'plant' => 'required|string|max:255',
+            'care' => 'required|string|max:255',
         ]);
 
         PlantCare::create($request->all());
