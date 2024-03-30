@@ -22,10 +22,17 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
   Route::resource('users', 'App\Http\Controllers\Admin\UserController');
   Route::resource('plants', 'App\Http\Controllers\Admin\PlantController');
   Route::resource('transactions', 'App\Http\Controllers\Admin\TransactionController');
+
+  Route::get('/plantcares', 'App\Http\Controllers\Admin\PlantCareController@index')->name('plantCares.index');
+  Route::get('/plantcares/{id}', 'App\Http\Controllers\Admin\PlantCareController@show')->name('plantCares.show');
+  Route::patch('/plantcares/{id}', 'App\Http\Controllers\Admin\PlantCareController@update')->name('plantCares.update');
+  Route::delete('/plantcares/{id}', 'App\Http\Controllers\Admin\PlantCareController@destroy')->name('plantCares.destroy');
 });
 
 Route::get('/', 'App\Http\Controllers\User\LandingController@index')->name('landing');
 Route::get('/tanaman', 'App\Http\Controllers\User\PlantController@index')->name('tanaman');
+Route::get('/tanaman-care', 'App\Http\Controllers\User\PlantController@plantcare')->name('tanaman.care');
+Route::post('/tanaman-care', 'App\Http\Controllers\User\PlantController@storePlantCare')->name('tanaman.care.store');
 
 Route::group(['middleware' => 'auth'], function () {
   Route::get('/cart', 'App\Http\Controllers\User\TransactionController@indexCart')->name('cart');
